@@ -4,8 +4,10 @@ class Header extends Component {
 	render() {
 		return (
 			<div>
-				<h2>气象查询</h2>
-				<p>You can find out the temperature,weather condition and more ...</p>
+				<h2 className="title-container__title">Weather Finder</h2>
+				<p className="title-container__subtitle">
+					You can find out the temperature,weather condition and more ...
+				</p>
 			</div>
 		);
 	}

@@ -8,9 +8,11 @@ class Search extends Component {
 		return (
 			<div>
 				<form onSubmit={getWeather}>
-					<input type="text" name="city" />
-					<input type="text" name="country" />
-					<button>查询</button>
+					<input type="text" name="city" placeholder="City" />
+					<input type="text" name="country" placeholder="Country" />
+					<button type="submit" className="btn btn-outlinde-default">
+						查询
+					</button>
 				</form>
 			</div>
 		);

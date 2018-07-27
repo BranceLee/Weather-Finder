@@ -44,11 +44,19 @@ class App extends Component {
 
 	render() {
 		return (
-			<div>
-				<div>
-					<Header />
-					<Search getWeather={this.getWeather} />
-					<Weather weatherCondition={this.state} />
+			<div className="wrapper">
+				<div className="main">
+					<div className="container">
+						<div className="row">
+							<div className="col-xs-5 title-container">
+								<Header />
+							</div>
+							<div className="col-xs-7 form-container">
+								<Search getWeather={this.getWeather} />
+								<Weather weatherCondition={this.state} />
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		);

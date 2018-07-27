@@ -3,20 +3,32 @@ class Weather extends Component {
 	state = {};
 
 	render() {
-		const { name, temp, humidity, main, weather, message } = this.props.weatherCondition;
+		const { name, temp, humidity, weather, message } = this.props.weatherCondition;
 		return (
 			<div>
-				<h1>Weather</h1>
 				<div>
-					<h2>{name}</h2>
-					<label>温度</label>
-					<input type="text" value={`${temp == null ? '' : temp}  `} />
-					<label>湿度 </label>
-					<input type="text" value={`${humidity == null ? '' : humidity}`} />
-					<label>{main == null ? '' : main.temp}</label>
-					<label>{weather == null ? '' : weather.haze}</label>
+					<div className="weather__location">
+						<label>Location :</label>
+						<span>&nbsp;{name}</span>
+					</div>
+					<div className="weather__temp">
+						<label>Temperature :</label>
+						<span>&nbsp;{temp == null ? '' : temp + '°'}</span>
+					</div>
+					<div className="weather__humidity">
+						<label>Humidity :</label>
+						<span>&nbsp;{humidity == null ? '' : humidity}</span>
+					</div>
+					<div className="weather__description">
+						<label>Weather :</label>
+						<span>&nbsp;{weather == null ? '' : weather[0]['description']}</span>
+					</div>
 					<div />
-					<strong>{message}</strong>
+					{message && (
+						<div style={{ width: '50%' }} className="alert alert-info" role="alert">
+							{message}
+						</div>
+					)}
 				</div>
 			</div>
 		);
